@@ -48,11 +48,11 @@ let result = (userresponse,Computerr)=>{
         case 'rock':
             switch(userresponse){
                 case 'paper':
-                    tie.innerHTML = `User Wins!!! <br/> <p class="user_text">Paper</p>  beats <p class="comp_text">rock</p>`;
+                    tie.innerHTML = `User Wins!!! <br/> Paper beats rock`;
                     u_score.innerHTML = ++user_score;
                     break;
                 case 'scissor':
-                    tie.innerHTML = `Computer Wins!!! <br/> <p class="user_text">Paper</p>  beats <p class="comp_text">rock</p>`;
+                    tie.innerHTML = `Computer Wins!!! <br/> Rock beats Scissor`;
                     c_score.innerHTML = ++comp_score;
                     break;
             }
@@ -103,15 +103,36 @@ rock.addEventListener('click', e =>{
     var added_class = document.getElementById('rock').classList;
     added_class.add('bcc');
     playgame(e.target.id);
+    setTimeout(()=>{
+        destroy();
+        rock.classList.remove('bcc');
+        scissor.classList.remove('bcc');
+        paper.classList.remove('bcc');
+        remove_border_color_cmp();
+    },2000);
     
 } );
 paper.addEventListener('click', e =>{
     var added_class = document.getElementById('paper').classList;
     added_class.add('bcc');
     playgame(e.target.id);
+    setTimeout(()=>{
+        destroy();
+        rock.classList.remove('bcc');
+        scissor.classList.remove('bcc');
+        paper.classList.remove('bcc');
+        remove_border_color_cmp();
+    },2000);
 } );
 scissor.addEventListener('click', e =>{
     var added_class = document.getElementById('scissor').classList;
     added_class.add('bcc');
     playgame(e.target.id);
+    setTimeout(()=>{
+        destroy();
+        rock.classList.remove('bcc');
+        scissor.classList.remove('bcc');
+        paper.classList.remove('bcc');
+        remove_border_color_cmp();
+    },2000);
 } );

@@ -6,7 +6,7 @@ body{
 .rps img{
     width: 100px;
     height: 100px;
-    border: 8px solid rgb(0, 0, 0);
+    border: 6px solid rgb(214, 211, 211);
     border-radius: 60%;
 }
 img:hover{
@@ -77,4 +77,11 @@ div.scoreboard div{
     min-height: 100px;
     font-family: 'Ms Madi', cursive;
     font-family: 'Nunito Sans', sans-serif;
+}
+
+.user-text{
+color: rgb(59, 224, 122);
+}
+.comp-text{
+color : rgb(0, 0, 255);
 }
