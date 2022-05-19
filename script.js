@@ -5,7 +5,7 @@ let scissor = document.getElementById('scissor');
  
 // var user_name = 
 
-var tie = document.querySelector('.Winner-text');
+var message = document.querySelector('.Winner-text');
 var user_score = 0;
 var comp_score = 0;
 
@@ -22,7 +22,7 @@ var responses = ['rock','paper','scissor'];
 }
 
 const destroy = () => {
-    tie.innerHTML = '';
+    message.innerHTML = '';
 };
 
 function remove_border_color_cmp(){
@@ -48,11 +48,11 @@ let result = (userresponse,Computerr)=>{
         case 'rock':
             switch(userresponse){
                 case 'paper':
-                    tie.innerHTML = `User Wins!!! <br/> Paper beats rock`;
+                    message.innerHTML = `User Wins!!! <br/> Paper beats rock`;
                     u_score.innerHTML = ++user_score;
                     break;
                 case 'scissor':
-                    tie.innerHTML = `Computer Wins!!! <br/> Rock beats Scissor`;
+                    message.innerHTML = `Computer Wins!!! <br/> Rock beats Scissor`;
                     c_score.innerHTML = ++comp_score;
                     break;
             }
@@ -61,10 +61,10 @@ let result = (userresponse,Computerr)=>{
             switch(userresponse){
                 case 'paper':
                     c_score.innerHTML = ++comp_score;
-                    tie.innerHTML = `Computer Wins!!! <br/> Scissor beats paper`;
+                    message.innerHTML = `Computer Wins!!! <br/> Scissor beats paper`;
                     break;
                 case 'rock':
-                    tie.innerHTML = `User Wins!!! <br/> Rock beats Scissor`;
+                    message.innerHTML = `User Wins!!! <br/> Rock beats Scissor`;
                     u_score.innerHTML = ++user_score;
                     break;
             }
@@ -72,12 +72,12 @@ let result = (userresponse,Computerr)=>{
             case 'paper':
                 switch(userresponse){
                     case 'scissor':
-                        tie.innerHTML = `User Wins!!! <br/> Scissor beats paper`;
+                        message.innerHTML = `User Wins!!! <br/> Scissor beats paper`;
                         u_score.innerHTML = ++user_score;
                         break;
                     case 'rock':
                         c_score.innerHTML = ++comp_score;
-                        tie.innerHTML = `Computer Wins!!! <br/> Paper beats Rock`;
+                        message.innerHTML = `Computer Wins!!! <br/> Paper beats Rock`;
                         break;
                 }
                 break;
@@ -93,7 +93,7 @@ let playgame = (userresponse)=>{
     var Computerr = computer_response();
     console.log(Computerr);
     if(Computerr == userresponse){
-       tie.innerHTML = `It's a Tie <br/> Try Again!!!`;
+       message.innerHTML = `It's a Tie <br/> Try Again!!!`;
     }
     result(userresponse,Computerr);
    return 0;
@@ -109,7 +109,7 @@ rock.addEventListener('click', e =>{
         scissor.classList.remove('bcc');
         paper.classList.remove('bcc');
         remove_border_color_cmp();
-    },2000);
+    },1000);
     
 } );
 paper.addEventListener('click', e =>{
@@ -122,7 +122,7 @@ paper.addEventListener('click', e =>{
         scissor.classList.remove('bcc');
         paper.classList.remove('bcc');
         remove_border_color_cmp();
-    },2000);
+    },1000);
 } );
 scissor.addEventListener('click', e =>{
     var added_class = document.getElementById('scissor').classList;
@@ -134,5 +134,5 @@ scissor.addEventListener('click', e =>{
         scissor.classList.remove('bcc');
         paper.classList.remove('bcc');
         remove_border_color_cmp();
-    },2000);
+    },1000);
 } );
