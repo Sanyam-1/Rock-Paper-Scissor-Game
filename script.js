@@ -50,7 +50,7 @@ let result = (userresponse,Computerr)=>{
         case 'rock':
             switch(userresponse){
                 case 'paper':
-                    message.innerHTML = `User Wins!!! <br/> <span class="user_text">Paper</span> beats <span class="comp_text">Rock</span>`;
+                    message.innerHTML = `User Wins!!! <br/> Paper beats Rock`;
                     u_score.innerHTML = ++user_score;
                     break;
                 case 'scissor':
