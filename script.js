@@ -3,6 +3,8 @@ let rock = document.getElementById('rock');
 let paper = document.getElementById('paper');
 let scissor = document.getElementById('scissor');
  
+// var user_name = 
+
 var tie = document.querySelector('.Winner-text');
 var user_score = 0;
 var comp_score = 0;

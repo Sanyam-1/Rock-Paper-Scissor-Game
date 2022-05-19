@@ -1,3 +1,7 @@
+body{
+    background-color: #23252c;
+    color: white;
+}
 
 .rps img{
     width: 100px;
@@ -43,14 +47,14 @@ div.scoreboard div{
 }
 
 .bcc{
-    border: 8px solid rgb(59, 224, 216) !important ;
+    border: 8px solid rgb(59, 224, 122) !important ;
     width: 110px !important;
     height: 110px !important;
     transition: 0.5s ease;
 }
 
 .cmp{
-    border: 8px solid rgb(224, 59, 73) !important ;
+    border: 8px solid rgb(0, 0, 255) !important ;
     width: 110px !important;
     height: 110px !important;
     transition: 0.5s ease;
