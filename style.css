@@ -85,3 +85,21 @@ color: rgb(59, 224, 122);
 .comp-text{
 color : rgb(0, 0, 255);
 }
+
+#reset{
+    color:rgb(255, 0, 0);
+    background:transparent;
+    padding: 8px 19px;
+    font-size: 17px;
+    border: 2.25px outset rgb(255, 0, 0);
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10%;
+}
+#reset:hover{
+    background-image:linear-gradient(to left , rgb(27, 27, 246),rgb(230, 98, 38));
+    transition: 0.7s;
+    border-color:white ;
+    color: white ;
+}

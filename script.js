@@ -5,6 +5,8 @@ let scissor = document.getElementById('scissor');
  
 // var user_name = 
 
+let reset = document.querySelector('#reset');
+
 var message = document.querySelector('.Winner-text');
 var user_score = 0;
 var comp_score = 0;
@@ -48,7 +50,7 @@ let result = (userresponse,Computerr)=>{
         case 'rock':
             switch(userresponse){
                 case 'paper':
-                    message.innerHTML = `User Wins!!! <br/> Paper beats rock`;
+                    message.innerHTML = `User Wins!!! <br/> <span class="user_text">Paper</span> beats <span class="comp_text">Rock</span>`;
                     u_score.innerHTML = ++user_score;
                     break;
                 case 'scissor':
@@ -136,3 +138,9 @@ scissor.addEventListener('click', e =>{
         remove_border_color_cmp();
     },1000);
 } );
+reset.addEventListener('click',()=>{
+    user_score = 0;
+    comp_score = 0;
+    u_score.innerHTML = user_score;
+    c_score.innerHTML = comp_score;
+})
