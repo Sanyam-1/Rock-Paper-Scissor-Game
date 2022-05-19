@@ -8,17 +8,24 @@ let scissor = document.getElementById('scissor');
 let reset = document.querySelector('#reset');
 
 var message = document.querySelector('.Winner-text');
+var win = document.querySelector('.win-msg');
+var first = document.querySelector('.first');
+var beats = document.querySelector('.beats');
+var second = document.querySelector('.second');
 var user_score = 0;
 var comp_score = 0;
 
 var u_score = document.querySelector('.user-board');
 var c_score = document.querySelector('.computer');
 
+var tie_class;
+
 var responses = ['rock','paper','scissor'];
  var computer_response = ()=>{
     var i = Math.floor(Math.random()*10)%3;
     var back = responses[i];
     var added_class = document.getElementById(back).classList;
+    tie_class = document.getElementById(back).classList;
     added_class.add('cmp');
     return back;
 }
@@ -88,16 +95,23 @@ let result = (userresponse,Computerr)=>{
     }
 }
 
+function remove_tie_border_color(){
+    tie_class.remove('tie');
+}
+
 let playgame = (userresponse)=>{
     destroy();
     remove_border_color_user(userresponse);
     remove_border_color_cmp();
     var Computerr = computer_response();
-    console.log(Computerr);
     if(Computerr == userresponse){
        message.innerHTML = `It's a Tie <br/> Try Again!!!`;
+       console.log(tie_class);
+       tie_class.add('tie');
     }
-    result(userresponse,Computerr);
+    else{
+        result(userresponse,Computerr);
+    }
    return 0;
 }
 
@@ -111,6 +125,7 @@ rock.addEventListener('click', e =>{
         scissor.classList.remove('bcc');
         paper.classList.remove('bcc');
         remove_border_color_cmp();
+        remove_tie_border_color();
     },1000);
     
 } );
@@ -123,6 +138,7 @@ paper.addEventListener('click', e =>{
         rock.classList.remove('bcc');
         scissor.classList.remove('bcc');
         paper.classList.remove('bcc');
+        remove_tie_border_color();
         remove_border_color_cmp();
     },1000);
 } );
@@ -135,6 +151,7 @@ scissor.addEventListener('click', e =>{
         rock.classList.remove('bcc');
         scissor.classList.remove('bcc');
         paper.classList.remove('bcc');
+        remove_tie_border_color();
         remove_border_color_cmp();
     },1000);
 } );
