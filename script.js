@@ -48,11 +48,11 @@ let result = (userresponse,Computerr)=>{
         case 'rock':
             switch(userresponse){
                 case 'paper':
-                    tie.innerHTML = `User Wins!!! <br/> Paper beats rock`;
+                    tie.innerHTML = `User Wins!!! <br/> <p class="user_text">Paper</p>  beats <p class="comp_text">rock</p>`;
                     u_score.innerHTML = ++user_score;
                     break;
                 case 'scissor':
-                    tie.innerHTML = `Computer Wins!!! <br/> Rock beats Scissor`;
+                    tie.innerHTML = `Computer Wins!!! <br/> <p class="user_text">Paper</p>  beats <p class="comp_text">rock</p>`;
                     c_score.innerHTML = ++comp_score;
                     break;
             }

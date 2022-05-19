@@ -27,11 +27,17 @@ body{
 div.scoreboard div{
     margin: 0px 60px;
 }
+.user-board{
+    color: rgb(59, 224, 122);
+}
+.computer{
+    color: rgb(0, 0, 255) ;
+}
 .user-board::after{
     content: "User Score";
     font-size: 1rem;
     position: absolute;
-    border: 2px solid rgb(255, 0, 0);
+    border: 3px solid rgb(59, 224, 122);
     border-radius: 10%;
     padding: 2px;
 }
@@ -40,7 +46,7 @@ div.scoreboard div{
     content: "Computer Score";
     font-size: 1rem;
     position: absolute;
-    border: 2px solid rgb(9, 255, 0);
+    border: 3px solid rgb(0, 0, 255);
     border-radius: 10%;
     padding: 2px;
 
