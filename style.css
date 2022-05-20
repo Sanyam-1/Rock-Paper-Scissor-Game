@@ -88,11 +88,11 @@ color : rgb(0, 0, 255);
 }
 
 #reset{
-    color:rgb(255, 0, 0);
-    background:transparent;
+    color: White;
+    background:red;
     padding: 8px 19px;
     font-size: 17px;
-    border: 2.25px outset rgb(255, 0, 0);
+    border: 3px outset rgb(228, 69, 69);
     outline: none;
     cursor: pointer;
     border-radius: 5px;

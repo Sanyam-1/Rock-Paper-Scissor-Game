@@ -46,23 +46,6 @@ const destroy = () => {
     message.innerHTML = '';
 };
 
-function remove_border_color_cmp(){
-    rock.classList.remove('cmp');
-    scissor.classList.remove('cmp');
-    paper.classList.remove('cmp');
-}
-
-function remove_border_color_user(userresponse){
-    if(userresponse != 'rock'){
-        rock.classList.remove('bcc');
-    }
-    if(userresponse != 'scissor' ){
-        scissor.classList.remove('bcc');
-    }
-    if(userresponse != 'paper'){
-        paper.classList.remove('bcc');
-    }
-}
 
 let result = (userresponse,Computerr)=>{
     switch(Computerr){
@@ -113,14 +96,20 @@ let result = (userresponse,Computerr)=>{
     }
 }
 
-function remove_tie_border_color(){
+
+function remove_everything(){
+    destroy();
+    rock.classList.remove('bcc');
+    scissor.classList.remove('bcc');
+    paper.classList.remove('bcc');
     tie_class.remove('tie');
+    rock.classList.remove('cmp');
+    scissor.classList.remove('cmp');
+    paper.classList.remove('cmp');
+    message.style.color = "white";
 }
 
 let playgame = (userresponse)=>{
-    destroy();
-    remove_border_color_user(userresponse);
-    remove_border_color_cmp();
     var Computerr = computer_response();
     if(Computerr == userresponse){
        message.innerHTML = `It's a Tie <br/> Try Again!!!`;
@@ -138,13 +127,7 @@ rock.addEventListener('click', e =>{
     added_class.add('bcc');
     playgame(e.target.id);
     setTimeout(()=>{
-        destroy();
-        rock.classList.remove('bcc');
-        scissor.classList.remove('bcc');
-        paper.classList.remove('bcc');
-        remove_border_color_cmp();
-        remove_tie_border_color();
-        message.style.color = "white"
+        remove_everything();
     },1000);
     
 } );
@@ -153,13 +136,7 @@ paper.addEventListener('click', e =>{
     added_class.add('bcc');
     playgame(e.target.id);
     setTimeout(()=>{
-        destroy();
-        rock.classList.remove('bcc');
-        scissor.classList.remove('bcc');
-        paper.classList.remove('bcc');
-        remove_tie_border_color();
-        message.style.color = "white"
-        remove_border_color_cmp();
+        remove_everything();
     },1000);
 } );
 scissor.addEventListener('click', e =>{
@@ -167,13 +144,7 @@ scissor.addEventListener('click', e =>{
     added_class.add('bcc');
     playgame(e.target.id);
     setTimeout(()=>{
-        destroy();
-        rock.classList.remove('bcc');
-        scissor.classList.remove('bcc');
-        paper.classList.remove('bcc');
-        remove_tie_border_color();
-        remove_border_color_cmp();
-        message.style.color = "white"
+        remove_everything();
     },1000);
 } );
 reset.addEventListener('click',()=>{
