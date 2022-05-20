@@ -142,4 +142,5 @@ reset.addEventListener('click',()=>{
     comp_score = 0;
     u_score.innerHTML = user_score;
     c_score.innerHTML = comp_score;
+    remove_everything();
 })
