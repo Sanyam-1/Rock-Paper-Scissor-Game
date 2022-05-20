@@ -16,20 +16,10 @@ var c_score = document.querySelector('.computer');
 
 var tie_class;
 
-function colors_html_user(){
-    var cmp_choice = document.querySelector('#cmp_choice');
-    var usr_choice = document.querySelector('#usr_choice');
-    var usr_win = document.querySelector('#usr_mesg');
-    usr_choice.style.color = "rgb(59, 224, 122)";
-    cmp_choice.style.color = "blue";
-    usr_win.style.color = "rgb(59, 224, 122)";
-}
-function colors_html_cmp(){
-    var comp_win = document.querySelector('#cmp_mesg');
+function colors_html(){
     var cmp_choice = document.querySelector('#cmp_choice');
     var usr_choice = document.querySelector('#usr_choice');
     usr_choice.style.color = "rgb(59, 224, 122)";
-    comp_win.style.color = "blue";
     cmp_choice.style.color = "blue";
 }
 var responses = ['rock','paper','scissor'];
@@ -52,13 +42,13 @@ let result = (userresponse,Computerr)=>{
         case 'rock':
             switch(userresponse){
                 case 'paper':
-                    message.innerHTML = `<span ><span id="usr_mesg"> ${user_name} Wins!!!</span><br/> <span id = "usr_choice">Paper</span> Beats <span id = "cmp_choice">Rock</span></span>`;
-                    colors_html_user();
+                    message.innerHTML = `<span > ${user_name} Wins!!!<br/> <span id = "usr_choice">Paper</span> Beats <span id = "cmp_choice">Rock</span></span>`;
+                    colors_html();
                     u_score.innerHTML = ++user_score;
                     break;
                 case 'scissor':
-                    message.innerHTML = `<span ><span id="cmp_mesg"> Computer Wins!!!</span><br/> <span id = "cmp_choice">Rock</span> Beats <span id = "usr_choice">Scissor</span></span>`;
-                    colors_html_cmp();
+                    message.innerHTML = `<span > Computer Wins!!!<br/> <span id = "cmp_choice">Rock</span> Beats <span id = "usr_choice">Scissor</span></span>`;
+                    colors_html();
                     c_score.innerHTML = ++comp_score;
                     break;
             }
@@ -67,26 +57,26 @@ let result = (userresponse,Computerr)=>{
             switch(userresponse){
                 case 'paper':
                     c_score.innerHTML = ++comp_score;
-                    message.innerHTML = `<span ><span id="cmp_mesg"> Computer Wins!!!</span><br/> <span id = "cmp_choice">Scissor</span> Beats <span id = "usr_choice">Paper</span></span>`;
-                    colors_html_cmp();
+                    message.innerHTML = `<span > Computer Wins!!!<br/> <span id = "cmp_choice">Scissor</span> Beats <span id = "usr_choice">Paper</span></span>`;
+                    colors_html();
                     break;
                 case 'rock':
                     u_score.innerHTML = ++user_score;
-                    message.innerHTML = `<span ><span id="usr_mesg"> ${user_name} Wins!!!</span><br/> <span id = "usr_choice">Rock</span> Beats <span id = "cmp_choice">Scissor</span></span>`;
-                    colors_html_user();
+                    message.innerHTML = `<span > ${user_name} Wins!!!<br/> <span id = "usr_choice">Rock</span> Beats <span id = "cmp_choice">Scissor</span></span>`;
+                    colors_html();
                     break;
             }
             break;
             case 'paper':
                 switch(userresponse){
                     case 'scissor':
-                        message.innerHTML = `<span ><span id="usr_mesg"> ${user_name} Wins!!!</span><br/> <span id = "usr_choice">Scissor</span> Beats <span id = "cmp_choice">Paper</span></span>`;
-                        colors_html_user();
+                        message.innerHTML = `<span > ${user_name} Wins!!!<br/> <span id = "usr_choice">Scissor</span> Beats <span id = "cmp_choice">Paper</span></span>`;
+                        colors_html();
                         u_score.innerHTML = ++user_score;
                         break;
                     case 'rock':
-                        message.innerHTML = `<span ><span id="cmp_mesg"> Computer Wins!!!</span><br/> <span id = "cmp_choice">Paper</span> Beats <span id = "usr_choice">Rock</span></span>`;
-                        colors_html_cmp();
+                        message.innerHTML = `<span > Computer Wins!!!<br/> <span id = "cmp_choice">Paper</span> Beats <span id = "usr_choice">Rock</span></span>`;
+                        colors_html();
                         c_score.innerHTML = ++comp_score;
                         break;
                 }
