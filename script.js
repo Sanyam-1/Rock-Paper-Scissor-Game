@@ -86,6 +86,23 @@ let result = (userresponse,Computerr)=>{
     }
 }
 
+function remove_border_color_cmp(){
+    rock.classList.remove('cmp');
+    scissor.classList.remove('cmp');
+    paper.classList.remove('cmp');
+}
+
+function remove_border_color_user(userresponse){
+    if(userresponse != 'rock'){
+        rock.classList.remove('bcc');
+    }
+    if(userresponse != 'scissor' ){
+        scissor.classList.remove('bcc');
+    }
+    if(userresponse != 'paper'){
+        paper.classList.remove('bcc');
+    }
+}
 
 function remove_everything(){
     destroy();
@@ -100,6 +117,9 @@ function remove_everything(){
 }
 
 let playgame = (userresponse)=>{
+    destroy();
+    remove_border_color_user(userresponse);
+    remove_border_color_cmp();
     var Computerr = computer_response();
     if(Computerr == userresponse){
        message.innerHTML = `It's a Tie <br/> Try Again!!!`;
