@@ -57,11 +57,14 @@ let result = (userresponse,Computerr)=>{
         case 'rock':
             switch(userresponse){
                 case 'paper':
-                    message.innerHTML = `User Wins!!! <br/> Paper beats Rock`;
+                    message.innerHTML = `User Wins`;
+                    message.style.color = "rgb(59, 224, 122)";
                     u_score.innerHTML = ++user_score;
                     break;
                 case 'scissor':
-                    message.innerHTML = `Computer Wins!!! <br/> Rock beats Scissor`;
+                    message.innerHTML = `Computer Wins!!!`;
+                    message.style.color ="blue";
+                    first.innerHTML = `Rock`;
                     c_score.innerHTML = ++comp_score;
                     break;
             }
@@ -70,23 +73,28 @@ let result = (userresponse,Computerr)=>{
             switch(userresponse){
                 case 'paper':
                     c_score.innerHTML = ++comp_score;
-                    message.innerHTML = `Computer Wins!!! <br/> Scissor beats paper`;
+                    message.innerHTML = `Computer Wins!!!`;
+                    message.style.color = "blue";
+
                     break;
                 case 'rock':
-                    message.innerHTML = `User Wins!!! <br/> Rock beats Scissor`;
                     u_score.innerHTML = ++user_score;
+                    message.innerHTML = `User Wins`;
+                    message.style.color ="rgb(59, 224, 122)";
                     break;
             }
             break;
             case 'paper':
                 switch(userresponse){
                     case 'scissor':
-                        message.innerHTML = `User Wins!!! <br/> Scissor beats paper`;
+                        message.innerHTML = `User Wins`;
+                        message.style.color = "rgb(59, 224, 122)";
                         u_score.innerHTML = ++user_score;
                         break;
                     case 'rock':
+                        message.innerHTML = `Computer Wins!!!`;
+                        message.style.color = "blue";
                         c_score.innerHTML = ++comp_score;
-                        message.innerHTML = `Computer Wins!!! <br/> Paper beats Rock`;
                         break;
                 }
                 break;
@@ -106,7 +114,7 @@ let playgame = (userresponse)=>{
     var Computerr = computer_response();
     if(Computerr == userresponse){
        message.innerHTML = `It's a Tie <br/> Try Again!!!`;
-       console.log(tie_class);
+       message.style.color = "red";
        tie_class.add('tie');
     }
     else{
@@ -126,6 +134,7 @@ rock.addEventListener('click', e =>{
         paper.classList.remove('bcc');
         remove_border_color_cmp();
         remove_tie_border_color();
+        message.style.color = "white"
     },1000);
     
 } );
@@ -139,6 +148,7 @@ paper.addEventListener('click', e =>{
         scissor.classList.remove('bcc');
         paper.classList.remove('bcc');
         remove_tie_border_color();
+        message.style.color = "white"
         remove_border_color_cmp();
     },1000);
 } );
@@ -153,6 +163,7 @@ scissor.addEventListener('click', e =>{
         paper.classList.remove('bcc');
         remove_tie_border_color();
         remove_border_color_cmp();
+        message.style.color = "white"
     },1000);
 } );
 reset.addEventListener('click',()=>{

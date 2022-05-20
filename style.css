@@ -74,10 +74,11 @@ div.scoreboard div{
     font-size: 2rem;
     align-items: center;
     margin: 20px;
-    min-height: 100px;
+    min-height: 90px;
     font-family: 'Ms Madi', cursive;
     font-family: 'Nunito Sans', sans-serif;
 }
+
 
 .user-text{
 color: rgb(59, 224, 122);
@@ -95,7 +96,7 @@ color : rgb(0, 0, 255);
     outline: none;
     cursor: pointer;
     border-radius: 5px;
-    margin: 10%;
+    margin: 5%;
     font-weight: 500;
 }
 #reset:hover{
@@ -110,3 +111,8 @@ color : rgb(0, 0, 255);
     height: 110px !important;
     transition: 0.5s ease;
 }
+
+/* .win-msg{
+    
+
+} */
