@@ -138,7 +138,7 @@ rock.addEventListener('click', e =>{
     playgame(e.target.id);
     setTimeout(()=>{
         remove_everything();
-    },1000);
+    },500);
     
 } );
 paper.addEventListener('click', e =>{
@@ -147,7 +147,7 @@ paper.addEventListener('click', e =>{
     playgame(e.target.id);
     setTimeout(()=>{
         remove_everything();
-    },1000);
+    },500);
 } );
 scissor.addEventListener('click', e =>{
     var added_class = document.getElementById('scissor').classList;
@@ -155,7 +155,7 @@ scissor.addEventListener('click', e =>{
     playgame(e.target.id);
     setTimeout(()=>{
         remove_everything();
-    },1000);
+    },500);
 } );
 reset.addEventListener('click',()=>{
     user_score = 0;
