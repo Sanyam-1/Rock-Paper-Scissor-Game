@@ -16,6 +16,8 @@ var c_score = document.querySelector('.computer');
 
 var tie_class;
 
+var timeoutid = null;
+
 function colors_html(){
     var cmp_choice = document.querySelector('#cmp_choice');
     var usr_choice = document.querySelector('#usr_choice');
@@ -103,6 +105,17 @@ function remove_border_color_user(userresponse){
         paper.classList.remove('bcc');
     }
 }
+function remove_tie_border(){
+    if(rock.classList.contains('tie')){
+        rock.classList.remove('tie');
+    }
+    if(paper.classList.contains('tie')){
+        paper.classList.remove('tie');
+    } 
+    if(scissor.classList.contains('tie')){
+        scissor.classList.remove('tie');
+    }
+}
 
 function remove_everything(){
     destroy();
@@ -120,6 +133,8 @@ let playgame = (userresponse)=>{
     destroy();
     remove_border_color_user(userresponse);
     remove_border_color_cmp();
+    remove_tie_border();
+    clearTimeout(timeoutid);
     var Computerr = computer_response();
     if(Computerr == userresponse){
        message.innerHTML = `It's a Tie <br/> Try Again!!!`;
@@ -136,26 +151,26 @@ rock.addEventListener('click', e =>{
     var added_class = document.getElementById('rock').classList;
     added_class.add('bcc');
     playgame(e.target.id);
-    setTimeout(()=>{
+    timeoutid = setTimeout(()=>{
         remove_everything();
-    },500);
+    },1000);
     
 } );
 paper.addEventListener('click', e =>{
     var added_class = document.getElementById('paper').classList;
     added_class.add('bcc');
     playgame(e.target.id);
-    setTimeout(()=>{
+    timeoutid = setTimeout(()=>{
         remove_everything();
-    },500);
+    },1000);
 } );
 scissor.addEventListener('click', e =>{
     var added_class = document.getElementById('scissor').classList;
     added_class.add('bcc');
     playgame(e.target.id);
-    setTimeout(()=>{
+    timeoutid = setTimeout(()=>{
         remove_everything();
-    },500);
+    },1000);
 } );
 reset.addEventListener('click',()=>{
     user_score = 0;
